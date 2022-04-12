@@ -1,6 +1,6 @@
 <?php
 
-include("header.php");
+include("includes/header.php");
 
 ?>
 
@@ -110,7 +110,7 @@ include("header.php");
    <h5 >FRANCE: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $row["name_fr"]?><span></h5>
    <h5 >Russian: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $row["name_ru"]?><span></h5>
    <h5 >TURKISH: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $row["name_tr"]?><span></h5>
-   
+   <img src="<?=PATH?>images/<?=$row['icon']?>"  style="max-width:100px;max-height:100px" />
   </div>
   <!--modal start -->
 
@@ -124,7 +124,7 @@ include("header.php");
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="update/<?=$row['id']?>">
+        <form method="post" enctype="multipart/form-data" action="update/<?=$row['id']?>">
         <div class="mb-3">
     <label  class="form-label">ar_name</label>
     <input type="text" name="name_ar" value="<?=$row["name_ar"]?>" class="form-control" >
@@ -144,6 +144,10 @@ include("header.php");
   <div class="mb-3">
   <label  class="form-label">tr_name</label>
     <input type="text" name="name_tr" value="<?=$row["name_tr"]?>" class="form-control" >
+  </div>
+  <div class="mb-3">
+  <label  class="form-label">icon</label>
+    <input type="file" name="uploadfile"  class="form-control" >
   </div>
   
         
@@ -168,6 +172,6 @@ include("header.php");
 
 
 <?php
-include("footer.php");
+include("includes/footer.php");
 
 ?>

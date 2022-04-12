@@ -64,12 +64,12 @@
           <?php foreach($category as $row): ?>
             <?php if($navbar->checkCategory($row['id'])>0): ?>
               <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="<?=PATH?>home/categoryselect/<?=$rows['id']?>" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?=$row["name_$lang"]?>
           </a>
           <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownMenuLink">
               <?php foreach($navbar->getSubCategory($row['id']) as $rows): ?>
-                <li><a class="dropdown-item" href="#"><?=$rows["name_$lang"]?></a></li>
+                <li><a class="dropdown-item" href="<?=PATH?>home/categoryselect/<?=$rows['id']?>"><?=$rows["name_$lang"]?></a></li>
                 <?php endforeach ?>
           </ul>
         </li>

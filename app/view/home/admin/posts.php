@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("includes/header.php");
 ?>
 
 
@@ -24,65 +24,41 @@ include("header.php");
 
 <div class="container" >
 <div class="row justify-content-center" style="margin: 10px;">
-<form method="POST"  action="/task1mvc/public/adminpost/insert"  style="width: 30rem;">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">title</label>
-    <input type="text" class="form-control"  name="title"  >
-    
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Text</label>
-    <textarea name="text" class="form-control"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">category</label>
-    <select name="category">
-    <?php foreach($category as $row): ?>
-      <option value="<?=$row->id?>">
-      <?=$row->name?>
-      </option>
-      <?php endforeach ?>
-    </select>
-  </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
       <div class="row justify-content-center" >
       <select onchange="location = this.value">
-      <option  default>--اختر تصنيف--</option>
-    <?php foreach($category as $row): ?>
-      <option value="/task1mvc/public/adminpost/index/<?=$row->id?>">
-      
-      <?=$row->name?>
-      
-      </option>
-      
-      <?php endforeach ?>
+      <option  default>--اختر القسم--</option>
+      <option value="<?=PATH."adminpost/index/"?>" >All</option>
+      <?php foreach($data as $row): ?>
+        <option value="<?=PATH."adminpost/index/".$row['id']?>"><?=$row['name_en']?></option>
+        <?php endforeach ?>
     </select>
       </div> 
-  <?php foreach($rows as $row):  ?>
-    
-  <div class="row justify-content-center" >
-    <div class="card" style="width: 50rem;">
+     <div class="container">
+       <?php foreach($postdata as $row): ?>
+       <div class="row justify-content-center">
+     <div class="card" style="width: 50rem;">
   <div class="card-header" style="float: left;">
-   <h5 style="float: left;"> <?=$row->username?></h5>
-   <a href="/task1mvc/public/adminpost/update/<?=$row->id?>" class="btn btn-primary" style="width:4rem;float:right;margin:5px">edit</a>
-
-   <a href="/task1mvc/public/adminpost/delete/<?=$row->id?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin:5px">X</a>
   
+  <button type="button" class="btn btn-primary" data-toggle="modal" style="width:5rem;float:right;margin-left:5px" data-target="#o<?=$row['id']?>">
+ update
+</button>
+   <a href="/photoGalary/public/admincategory/delete/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
+   <h4> category card </h4>
+   
+  <?php  ?>
   </div>
-  
   <div class="card-body">
-    <h5 class="card-title"><?=$row->title?></h5>
-    <p class="card-text"><?=$row->text?></p>
-    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+  <h5 >ARABIC: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $row["title_$lang"]?></span></h5>
+  <h5 >category name: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $category->getCategoryName($row['category_id'],$lang)?></span></h5>
+   <img src="<?=PATH?>images/"  style="max-width:100px;max-height:100px" />
   </div>
+  
 </div>
-           
-          
-        </div>
-        <?php endforeach ?>
+     </div>
+     <?php endforeach ?>
+</div>
 </div>
 </div>
         <!-- /.row (main row) -->
@@ -90,5 +66,5 @@ include("header.php");
 
 
 <?php
-include("footer.php");
+include("includes/footer.php");
 ?>
