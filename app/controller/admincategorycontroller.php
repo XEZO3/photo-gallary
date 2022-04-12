@@ -55,19 +55,47 @@ class admincategorycontroller extends controller{
     }
     function update($id){
         $category = new admincategory;
+        if(!empty($_FILES['uploadfile']['name'])){
+        $file = $_FILES['uploadfile'];
+        $name = $file['name'];
+        
+	    $tmp = $file['tmp_name'];
+	    $error = $file['error'];
+	    $size = $file['size'];
+        $file_ext = explode('.', $name);
+	    $file_ext = strtolower(end($file_ext));
+      
+        //$folder = "/photoGalary/public/images/".$name;
+        $new_name = uniqid('',true). '.' . $name;
+        $dest = "images/" . $new_name;
+            $data = [
+                'name_ar'=> htmlspecialchars($_POST['name_ar']),
+                'name_en'=> htmlspecialchars($_POST['name_en']),
+                'name_fr'=> htmlspecialchars($_POST['name_fr']),
+                'name_ru'=> htmlspecialchars($_POST['name_ru']),
+                'name_tr'=> htmlspecialchars($_POST['name_tr']),
+                'icon'=>htmlspecialchars($new_name)
+            ];
+            if (move_uploaded_file($tmp, $dest)) {
+                $update = $category->update($data,$id[0]);
+                
+        
+            }
+        }else{
         $data = [
             'name_ar'=> htmlspecialchars($_POST['name_ar']),
             'name_en'=> htmlspecialchars($_POST['name_en']),
             'name_fr'=> htmlspecialchars($_POST['name_fr']),
             'name_ru'=> htmlspecialchars($_POST['name_ru']),
             'name_tr'=> htmlspecialchars($_POST['name_tr']),
-            'parent_id'=>htmlspecialchars($_POST['parent_id']),
+            
         ];
-       
-       
         $update = $category->update($data,$id[0]);
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-        exit;
+      
+    }
+       
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                exit;
         
     }
     function categoryInfo($id){
