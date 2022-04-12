@@ -17,10 +17,10 @@ function insert($data){
 function update($data,$id){
     return  model::db()->update('category',$data,['id'=>$id]);
 }
-function getCategoryName($id){
+function getCategoryName($id,$lang){
     $query=  model::db()->row("select * from category where id = ?",[$id]);
     
-    return @$query->name_en;
+    return @$query["name_$lang"];
 }
 function categoryInfo($id){
     return  model::db()->rows("select * from category where parent_id = ?",[$id]);
