@@ -1,7 +1,7 @@
 <?php
 namespace MVC\model;
 use MVC\core\model;
-class navbar {
+class navbar extends model{
     function getCategory(){
         return  model::db()->rows("select * from category where parent_id =? or parent_id=? order by parent_id",[0,null]);
     }

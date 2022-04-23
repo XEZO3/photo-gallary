@@ -2,7 +2,7 @@
 namespace MVC\model;
 use MVC\core\model;
 
-class category {
+class category extends model{
 
 function getcategory(){
     return  model::db()->rows("select * from category");

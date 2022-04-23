@@ -15,5 +15,8 @@ return @$_SESSION[$name];
 static function set($name,$value){
     @$_SESSION[$name] = $value;
 }
+static function destroy(){
+    session_destroy();
+}
 }
 ?>

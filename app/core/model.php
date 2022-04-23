@@ -3,7 +3,8 @@ namespace MVC\core;
 use Dcblogdev\PdoWrapper\Database as Database;
 
 class model{
-static function db(){
+  public $db;
+ function db(){
     $options = [
         //required
         'username' => 'root',
@@ -15,7 +16,7 @@ static function db(){
         'host' => 'localhost',
         'port' => '3306'
     ];
-  return  $db = new Database($options);
+    return isset( $this->db ) ? $this->db : $this->db = new Database($options);
 }
 }
 ?>
