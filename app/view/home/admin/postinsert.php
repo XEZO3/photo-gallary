@@ -58,6 +58,16 @@ include("includes/header.php");
     <label for="exampleInputEmail1" class="form-label">title_tr</label>
       </div>
     </div>
+    <div class="col">
+      <div class="form-outline">
+      <select required class="form-control" name="category_id">
+      <option value="" default>--select category--</option>
+        <?php foreach($data as $row): ?>
+          <option value="<?=$row['id']?>"><?= $row["name_$lang"] ?></option>
+          <?php endforeach ?>
+      </select>
+      </div>
+    </div>
 
     
   </div>

@@ -1,9 +1,6 @@
-<?php
-
-echo $_SESSION['lang'];
-?>
-
-
+<section>
+    
+</section>
 
 
 <?php

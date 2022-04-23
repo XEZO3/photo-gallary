@@ -46,27 +46,27 @@ include("includes/header.php");
         <form method="post" enctype="multipart/form-data" action="insert">
         <div class="mb-3">
     <label  class="form-label">ar_name</label>
-    <input type="text" name="name_ar" class="form-control" >
+    <input type="text" required name="name_ar" class="form-control" >
   </div>
   <div class="mb-3">
   <label  class="form-label">en_name</label>
-    <input type="text" name="name_en" class="form-control" >
+    <input type="text" required name="name_en" class="form-control" >
   </div>
   <div class="mb-3">
   <label  class="form-label">fr_name</label>
-    <input type="text" name="name_fr" class="form-control" >
+    <input type="text" required name="name_fr" class="form-control" >
   </div>
   <div class="mb-3">
   <label  class="form-label">ru_name</label>
-    <input type="text" name="name_ru" class="form-control" >
+    <input type="text" required name="name_ru" class="form-control" >
   </div>
   <div class="mb-3">
   <label  class="form-label">tr_name</label>
-    <input type="text" name="name_tr" class="form-control" >
+    <input type="text" required name="name_tr" class="form-control" >
   </div>
   <div class="mb-3">
   <label  class="form-label">icon</label>
-    <input type="file" name="uploadfile"  class="form-control" >
+    <input type="file" required name="uploadfile"  class="form-control" >
   </div>
   <select name="parent_id" required >
   <option value="0" selected="selected">parent category</option>

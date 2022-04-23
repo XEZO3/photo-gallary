@@ -1,7 +1,6 @@
 <?php
-include("header.php");
+include("includes/header.php");
 ?>
-
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -74,6 +73,6 @@ include("header.php");
   </div>
 
 <?php
-include("footer.php");
+include("includes/footer.php");
 
 ?>

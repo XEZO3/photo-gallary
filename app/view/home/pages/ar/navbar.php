@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-   
+  <script src="https://kit.fontawesome.com/18cbec86c9.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,7 +34,7 @@
   <body>
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+  
 
 
 
@@ -50,32 +50,16 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">الصفحة الرئيسية</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             الاقسام
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <?php foreach($category as $row): ?>
-            <?php if($navbar->checkCategory($row['id'])>0): ?>
-              <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?=$row["name_$lang"]?>
-          </a>
-          <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownMenuLink">
-              <?php foreach($navbar->getSubCategory($row['id']) as $rows): ?>
-                <li><a class="dropdown-item" href="#"><?=$rows["name_$lang"]?></a></li>
-                <?php endforeach ?>
-          </ul>
-        </li>
-              <?php else: ?>
-            <li><a class="dropdown-item" href="#"><?=$row["name_$lang"]?></a></li>
-            <?php endif ?>
+            
+            <li><a class="dropdown-item" href="<?=PATH?>home/categoryselect/<?=$row['id']?>"><?=$row["name_$lang"]?></a></li>
+            
             <?php endforeach ?>
           </ul>
         </li>

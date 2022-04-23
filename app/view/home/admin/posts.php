@@ -31,7 +31,7 @@ include("includes/header.php");
       <option  default>--اختر القسم--</option>
       <option value="<?=PATH."adminpost/index/"?>" >All</option>
       <?php foreach($data as $row): ?>
-        <option value="<?=PATH."adminpost/index/".$row['id']?>"><?=$row['name_en']?></option>
+        <option value="<?=PATH."adminpost/index/".$row['id']?>"><?=$row["name_$lang"]?></option>
         <?php endforeach ?>
     </select>
       </div> 
@@ -41,18 +41,18 @@ include("includes/header.php");
      <div class="card" style="width: 50rem;">
   <div class="card-header" style="float: left;">
   
-  <button type="button" class="btn btn-primary" data-toggle="modal" style="width:5rem;float:right;margin-left:5px" data-target="#o<?=$row['id']?>">
+  <a href="<?=PATH?>adminpost/updatepage/<?=$row['id']?>" class="btn btn-primary"  style="width:5rem;float:right;margin-left:5px">
  update
-</button>
-   <a href="/photoGalary/public/admincategory/delete/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
-   <h4> category card </h4>
+       </a>
+   <a href="/photoGalary/public/adminpost/deletepost/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
+   <h4> post card </h4>
    
   <?php  ?>
   </div>
   <div class="card-body">
-  <h5 >ARABIC: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $row["title_$lang"]?></span></h5>
+  <h5 >title: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $row["title_$lang"]?></span></h5>
   <h5 >category name: <span style="margin-left:10px;color:dimgray;font-size:30px"><?= $category->getCategoryName($row['category_id'],$lang)?></span></h5>
-   <img src="<?=PATH?>images/"  style="max-width:100px;max-height:100px" />
+   
   </div>
   
 </div>

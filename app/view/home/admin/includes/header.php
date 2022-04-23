@@ -52,23 +52,23 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-left">
           
           <div class="dropdown-divider"></div>
-          <a href="<?=PATH?>adminpost/setlanguage/ar" class="dropdown-item">
+          <a href="<?=PATH?>admin/setlanguage/ar" class="dropdown-item">
              arabic
             
           </a>
-          <a href="<?=PATH?>adminpost/setlanguage/en" class="dropdown-item">
+          <a href="<?=PATH?>admin/setlanguage/en" class="dropdown-item">
             english
             
           </a>
-          <a href="<?=PATH?>adminpost/setlanguage/fr" class="dropdown-item">
+          <a href="<?=PATH?>admin/setlanguage/fr" class="dropdown-item">
              france
             
           </a>
-          <a href="<?=PATH?>adminpost/setlanguage/ru" class="dropdown-item">
+          <a href="<?=PATH?>admin/setlanguage/ru" class="dropdown-item">
              russian
             
           </a>
-          <a href="<?=PATH?>adminpost/setlanguage/tr" class="dropdown-item">
+          <a href="<?=PATH?>admin/setlanguage/tr" class="dropdown-item">
              turkey
             
           </a>
@@ -113,8 +113,8 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
+        <a class="nav-link"  href="<?=PATH?>admin/logout" role="button">
+          logout
         </a>
       </li>
     </ul>
@@ -173,12 +173,7 @@
                   <p>main</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/photoGalary/public/adminpost/" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>posts</p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="/photoGalary/public/admincategory/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -211,6 +206,12 @@
              
             </ul>
           </li>
+          <li class="nav-item">
+                <a href="<?=PATH?>admin/users" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>users</p>
+                </a>
+              </li>
             </ul>
           </li>
          
