@@ -2,8 +2,20 @@
 
 namespace MVC\controller;
 use MVC\core\controller;
+use MVC\core\session;
 use MVC\model\admincategory;
 class admincategorycontroller extends controller{
+    function __construct()
+    {
+        $session =  new session;
+        if(session::get("lang")==null){
+            session::set("lang","en");
+        }
+        if(session::get("username")==null){
+            header("location:".PATH."user/");
+            exit;
+        }
+    }
     function index(){
         $category = new admincategory;
         $data = $category->getcategory();
@@ -48,10 +60,12 @@ class admincategorycontroller extends controller{
            
         
         $insert = $category->insert($data);
+        
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit; 
              }
-       
+             header('Location: ' . $_SERVER['HTTP_REFERER']);
+             exit; 
     }
     function update($id){
         $category = new admincategory;
@@ -100,8 +114,9 @@ class admincategorycontroller extends controller{
     }
     function categoryInfo($id){
         $category = new admincategory;
+        $lang = session::get("lang");
         $info = $category->categoryInfo($id[0]);
-        $this->view("home/admin/categoryinfo",['info'=>$info,'id'=>$id[0],'name'=>$category->getCategoryName($id[0])]);
+        $this->view("home/admin/categoryinfo",['info'=>$info,'id'=>$id[0],'name'=>$category->getCategoryName($id[0],$lang)]);
     }
 }
 ?>
