@@ -151,12 +151,14 @@ function update($id){
 }
 function deleteimage($id){
     $post = new adminpost;
+    
     $delete = $post->delete("images",$id[0]);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
 }
 function delete_all_img($id){
     $post = new adminpost;
+    
     $delete = $post->deleteall("images",$id[0]);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;

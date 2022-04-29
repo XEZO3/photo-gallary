@@ -38,8 +38,10 @@ body,html {
 }
 
 .card{
-  margin-top: 20px;
-  margin-bottom: 5px;
+ 
+  margin-top: 15px;
+  margin-left: 60px;
+
 }
 
 
@@ -58,7 +60,7 @@ body,html {
       <?php foreach($data as $row):
       ?>
         
-   <div class="col-md-4">
+   <div class="col">
         <a href="<?=PATH?>home/postinfo/<?=$row['id'] ?>" style="text-decoration: none;color:black">
     <div class="card" style="width: 22rem;">
     <img  src="<?=PATH?>images/<?=$post->getmainimage($row['id'])?>" class="card-img-top" >

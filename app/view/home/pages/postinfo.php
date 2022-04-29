@@ -4,7 +4,7 @@
   width: 100%;
   height: 500px;
   
-  object-fit:cover;
+  object-fit:contain;
 
 }
 </style>
@@ -48,7 +48,7 @@
   </button>
 </div>
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" dir="<?=($lang == "ar") ?"rtl" : "ltr"?>">
   <h3><?=$postinfo["title_$lang"]?></h3>
   <p><?=$postinfo["discribe_$lang"]?></p>
 </div>

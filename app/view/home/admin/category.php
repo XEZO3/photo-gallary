@@ -95,11 +95,11 @@ include("includes/header.php");
     <div class="card" style="width: 50rem;">
   <div class="card-header" style="float: left;">
   
-  <a href="/photoGalary/public/admincategory/categoryinfo/<?=$row['id']?>" class="btn btn-primary" style="width:5rem;float:right;background-color:gray;margin-left:5px">more</a>
+  <a href="<?=PATH?>admincategory/categoryinfo/<?=$row['id']?>" class="btn btn-primary" style="width:5rem;float:right;background-color:gray;margin-left:5px">more</a>
   <button type="button" class="btn btn-primary" data-toggle="modal" style="width:5rem;float:right;margin-left:5px" data-target="#o<?=$row['id']?>">
  update
 </button>
-   <a href="/photoGalary/public/admincategory/delete/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
+   <a href="<?=PATH?>admincategory/delete/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
    <h4> category card </h4>
    
   <?php  ?>

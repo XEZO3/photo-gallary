@@ -42,6 +42,7 @@ function lastid(){
     return  model::db()->lastInsertId();
 
 }
+
 }
 
 

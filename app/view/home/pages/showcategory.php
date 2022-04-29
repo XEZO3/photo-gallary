@@ -8,6 +8,7 @@
 }
 .card{
   margin-top: 15px;
+  margin-left: 60px;
 }
 img{
   height: 250px;
@@ -18,13 +19,13 @@ img{
 
 </style>
 
-<div class="container" >
-<div class="row justify-content-center">
+<div class="container" dir="<?=($lang == "ar") ?"rtl" : "ltr"?>">
+<div class="row justify-content-center" style="width: 100%;">
   <?php if(!empty($data)): ?>
 <?php foreach($data as $row): ?>
 
   
-<div class="col-md-4">
+<div class="col">
         <a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration: none;color:black">
     <div class="card" style="width: 20rem;">
     <img src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" >

@@ -6,7 +6,7 @@ use MVC\core\session;
 use MVC\model\navbar;
 
 class navbarcontroller extends controller{
-    function __construct()
+    function __construct($title)
     {
        $navbar = new navbar;
        $category = $navbar->getCategory();
@@ -14,7 +14,7 @@ class navbarcontroller extends controller{
         session::set("lang","en");
         }
         $lang = session::get("lang");
-        $this->view("home/pages/$lang/navbar",['category'=>$category,'lang'=>$lang,'navbar'=>$navbar]);
+        $this->view("home/pages/$lang/navbar",['category'=>$category,'lang'=>$lang,'navbar'=>$navbar,'title'=>$title]);
     }
     
 }

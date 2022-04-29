@@ -3,6 +3,7 @@
 namespace MVC\controller;
 use MVC\core\controller;
 use MVC\core\session;
+use MVC\model\footer;
 use MVC\model\users;
 
 class admincontroller extends controller{
@@ -16,6 +17,43 @@ class admincontroller extends controller{
             header("location:".PATH."user/");
             exit;
         }
+    }
+    function social(){
+        $footer =  new footer;
+        $lang = session::get("lang");
+        $data = $footer->getlinks();
+        $this->view("home/admin/social",['data'=>$data,'lang'=>$lang]);
+    }
+    function social_insert(){
+        $footer = new footer();
+        $data =  [
+            'name'=>htmlspecialchars($_POST['name']),
+            'icon'=>$_POST['icon'],
+            'link'=>htmlspecialchars($_POST['link'])
+        ];
+        $insert = $footer->insertlinks($data);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
+    }
+    function social_delete($id){
+        $footer = new footer();
+        $delete = $footer->deletelinks(@$id[0]);
+        if($delete){
+            echo"hhhh";
+        }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
+    }
+    function social_update($id){
+        $footer = new footer();
+        $data =  [
+            'name'=>htmlspecialchars($_POST['name']),
+            'icon'=>$_POST['icon'],
+            'link'=>htmlspecialchars($_POST['link'])
+        ];
+        $update = $footer->updatelinks($data,@$id[0]);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
     }
     function index(){
         $this->view("home/admin/index",[]);

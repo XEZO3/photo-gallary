@@ -3,6 +3,7 @@
 namespace MVC\controller;
 use MVC\core\controller;
 use MVC\core\session;
+use MVC\model\footer;
 use MVC\model\navbar;
 use MVC\model\users;
 
@@ -12,8 +13,11 @@ class usercontroller extends controller{
         $session = new session;
     }
     function index(){
-        $navbar = new navbarcontroller;
-        $this->view("home/pages/login",[]);
+        $footer = new footer;
+        $title = "posts"; 
+       $data = $footer->getlinks();
+        $navbar = new navbarcontroller($title);
+        $this->view("home/pages/login",['footer'=>$data]);
     }
     function postlogin(){
         if(session::get('username') !=null and session::get('userid')!=null){

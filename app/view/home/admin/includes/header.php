@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://kit.fontawesome.com/18cbec86c9.js" crossorigin="anonymous"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
@@ -168,9 +170,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/task1mvc/public/admin/index" class="nav-link ">
+                <a href="<?=PATH?>admin/social" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>main</p>
+                  <p>SOCIAL links</p>
                 </a>
               </li>
               
