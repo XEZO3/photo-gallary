@@ -44,7 +44,7 @@ include("includes/header.php");
   <a href="<?=PATH?>adminpost/updatepage/<?=$row['id']?>" class="btn btn-primary"  style="width:5rem;float:right;margin-left:5px">
  update
        </a>
-   <a href="/photoGalary/public/adminpost/deletepost/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
+   <a href="<?=PATH?>adminpost/deletepost/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
    <h4> post card </h4>
    
   <?php  ?>
