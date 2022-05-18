@@ -60,7 +60,7 @@ body,html {
       <?php foreach($data as $row):
       ?>
         
-   <div class="col">
+   <div class="col-md-auto d-flex justify-content-center">
         <a href="<?=PATH?>home/postinfo/<?=$row['id'] ?>" style="text-decoration: none;color:black">
     <div class="card" style="width: 22rem;">
     <img  src="<?=PATH?>images/<?=$post->getmainimage($row['id'])?>" class="card-img-top" >

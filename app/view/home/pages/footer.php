@@ -1,3 +1,7 @@
+
+ </div>
+        </div>
+
 <footer class="mt-auto text-center "  style="background-color:#090a0a;width:100%;margin-top:10px">
   <!-- Grid container -->
   <div class="container pt-2">
@@ -26,5 +30,7 @@
 
   
 </footer>
+
+<script src="<?=PATH?>js/scripts.js"></script>
 </body>
 </html>

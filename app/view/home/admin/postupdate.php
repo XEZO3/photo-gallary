@@ -114,13 +114,45 @@ include("includes/header.php");
 <div class="row justify-content-center">
 
     <?php foreach($images as $img):?>
-<div class="card" style="width: 19rem;margin:15px">
+      
+  <div class="card" style="width: 19rem;margin:15px">
 
 <img src="/photogalary/public/images/<?=$img['image']?>" class="card-img-top" height="170px" alt="...">
 <div class="card-body" > 
 <a class="btn btn-primary" href="<?=PATH?>adminpost/deleteimage/<?=$img['id']?>" style="background-color: red;">delete</a>
-<a class="btn btn-primary" href="/photogalary/public/images/<?=$img['image']?>" target="_blank">see the photo</a>
+<a class="btn btn-primary" href="<?=PATH?>public/images/<?=$img['image']?>" target="_blank">see the photo</a>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#o<?=$img['id']?>">update</button>
 </div>
+</div>
+<div class="modal fade" id="o<?=$img['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">update img</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" enctype="multipart/form-data" action="<?=PATH?>adminpost/updatesimg/<?=$img['id']?>">
+        <div class="mb-3">
+    <label  class="form-label">ar_name</label>
+    <input type="file" required name="img" class="form-control" >
+  </div>
+  
+ 
+  
+      
+  
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <?php endforeach?>
 </div>

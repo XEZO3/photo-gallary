@@ -3,29 +3,27 @@
 ?>
 
 <style>
-.row{
-  width: 100%;
-}
-.card{
-  margin-top: 15px;
-  margin-left: 60px;
-}
+
+
 img{
   height: 250px;
   width: 250px;
   background-size: cover;
   object-fit: contain;
 }
+.card{
+  margin-top: 10px;
+}
 
 </style>
 
 <div class="container" dir="<?=($lang == "ar") ?"rtl" : "ltr"?>">
-<div class="row justify-content-center" style="width: 100%;">
+<div class="row justify-content-center" >
   <?php if(!empty($data)): ?>
 <?php foreach($data as $row): ?>
 
   
-<div class="col">
+<div class="col-md-auto d-flex justify-content-center">
         <a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration: none;color:black">
     <div class="card" style="width: 20rem;">
     <img src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" >

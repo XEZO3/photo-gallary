@@ -41,7 +41,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">Around <span style="color: orange;">IT</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,6 +90,24 @@
       
         </ul>
     
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+   
+    <ul class="navbar-nav  ">
+    <a class="navbar-brand" href="#">Around <span style="color: orange;">it</span></a>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+     
+    </ul>
   </div>
 </nav>
 <header class="navbar navbar-expand-lg navbar-light bg-light">

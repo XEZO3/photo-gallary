@@ -7,6 +7,7 @@ use MVC\model\category;
 use MVC\model\post;
 use MVC\core\cookies;
 use MVC\model\footer;
+use MVC\model\home;
 
 class homecontroller extends controller{
     public $footer;
@@ -22,9 +23,11 @@ class homecontroller extends controller{
     }
 
     function index(){
+        $home = new home;
         $title ="homepage";
-        $navbar = new navbarcontroller($title);
-        $this->view("home/pages/homepage",['title'=>"homepage",'footer'=>$this->footer]);
+       $navbar = new navbarcontroller($title);
+        $news =  $home->get_news();
+        $this->view("home/pages/homepage",['title'=>"homepage",'footer'=>$this->footer,'data'=>$news]);
         
     }
     function categoryselect($id){

@@ -151,14 +151,15 @@ function update($id){
 }
 function deleteimage($id){
     $post = new adminpost;
-    
+    $oldname = $post->image_by_id($id[0]);
+    @unlink("images/".$oldname);
     $delete = $post->delete("images",$id[0]);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
 }
 function delete_all_img($id){
     $post = new adminpost;
-    
+   
     $delete = $post->deleteall("images",$id[0]);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
@@ -169,6 +170,34 @@ function deletepost($id){
     header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
     
+}
+function updatesimg($id){
+    $post = new adminpost;
+    $oldname = $post->image_by_id($id[0]);
+    @unlink("images/".$oldname);
+    $file = $_FILES['img'];
+        $name = $file['name'];
+	    $tmp = $file['tmp_name'];
+	    $error = $file['error'];
+	    $size = $file['size'];
+        $file_ext = explode('.', $name);
+	    $file_ext = strtolower(end($file_ext));
+      
+        //$folder = "/photoGalary/public/images/".$name;
+        $new_name = uniqid('',true). '.' . $name;
+        $dest = "images/" . $new_name;
+        $data=[
+            "image"=>htmlspecialchars($new_name)
+        ];
+   // $update= $post->updatecover(@$id[0],$data);
+   if (move_uploaded_file($tmp, $dest)) {
+   
+    $update= $post->update("images",$data,@$id[0]);
+    
+   
+         }
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit;
 }
 }
 

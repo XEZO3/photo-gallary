@@ -42,7 +42,10 @@ function lastid(){
     return  model::db()->lastInsertId();
 
 }
-
+function image_by_id($id){
+     $query = model::db()->row("select * from images where id = ?",[$id]);
+     return $query['image'];
+}
 }
 
 
