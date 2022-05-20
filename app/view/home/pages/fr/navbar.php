@@ -67,11 +67,28 @@
                       <div class="p-2 bd-highlight" > 
                       <!-- <button class="btn btn-primary" id="sidebarToggle"><i class="fa-solid fa-bars fa-lg"></i></button> -->
                       <img src="<?=PATH?>icons/bar.png" style="height:30px;width:33px;background-size:100% 100%;margin:0">
-                    <span style="color:white"> Menu</span>
+                    <span style="color:white;font-weight:bold"> Menu</span>
                     </div>
                     </button>
-                      <div class="p-2 bd-highlight"> <a class="nav-link" href="<?=PATH?>">Home</a></div>
-                      <div class="p-2 bd-highlight"> <a class="nav-link" href="#!">Link</a></li></div>   
+                    
+                    <div class="p-2 bd-highlight"> <a class="nav-link" href="<?=PATH?>"><span style="color:#014990;font-weight:bold;font-size:22px">Around </span><span style="color:#C41230;font-weight:bold;font-size:22px"> it</span></a></div>
+                      <!-- <div class="p-2 bd-highlight"> <a class="nav-link" href="#!"><img style="height:40px;width:40px" src="<?=PATH?>icons/world.png"></a></div>    -->
+                      <div class="p-2 bd-highlight ms-auto">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="height:35px;width:35px" src="<?=PATH?>icons/world.png"></a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/ar"?>">العربية</a> 
+                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/en"?>">english</a> 
+                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/fr"?>">france</a> 
+                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/ru"?>">russian</a> 
+                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/tr"?>">turkey</a> 
+                                </div>
+                      </div>
+                      <div class="p-2 bd-highlight">
+                        <a class="nav-link" href="<?=PATH?>home/showfav">
+                      <img style="height:35px;width:35px" src="<?=PATH?>icons/bookmark.png">
+                        </a>
+                      </div>
+                   
                     </div>
                     </div>
 </header>

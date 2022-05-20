@@ -16,12 +16,14 @@
   width:400px;
   height:300px;
   border-radius: 10px;
-  background-color: rgba(16, 36, 78, 0.7);
+  background-color: rgba(16, 36, 78, 0.8);
+ 
 
  
   }
 </style>
 <div class="container-fulid">
+  <?php if(!empty($data)): ?>
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
   <!-- Indicators/dots -->
@@ -41,9 +43,13 @@
     ?>
        
     <div class="carousel-item <?=($active==true)?"active":""?>" style="position:relative">
-      <img src="<?=$row['pic']?>"   class="d-block" style="width:100%" >
-      <div class="on-slid" >
-      <?=$row['pic']?>
+      <img src="<?=$row['image']?>"   class="d-block" style="width:100%" >
+      <div class="on-slid " >
+        <div class="d-flex flex-column text-center" style="margin-top: 11%">
+      <h3 class="p-2 bd-highlight" style="color:white;"><?=$row['title']?></h3>
+      <p style="color:white;font-size:18px" class="p-2 bd-highlight"><?=$row['text']?></p>
+      <div class=" p-2 bd-highlight"><a href="<?=PATH?>home/categoryselect/<?=$row['category_id']?>" style="color:white;background-color:red" class="btn">Shop Now</a></div>
+      </div>
       </div>
       <div class="carousel-caption" >
         
@@ -65,6 +71,7 @@
   </button>
 </div>
 sss
+<?php endif ?>
 </div>
 
 

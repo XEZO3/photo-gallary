@@ -3,51 +3,19 @@
 ?>
 <style>
 
-.card-img-top{
+img{
   height: 250px;
+  width: 250px;
+  background-size: cover;
   object-fit: contain;
 }
-.favorite_icon{
- height: 25px;
- width: 20px;
- object-fit: cover;
-}
-.aa{
-  text-decoration: none;
-  color: black;
-  text-align: center;
-}
-
-
-html {
- 
- min-height: 100%;
- height: 100%;
- overflow-x: hidden;
- overflow-y: scroll;
-}
-
-
-
-body,html {
-  
-  margin: 0px;
-  
-  height: 100%;
- 
-}
-
 .card{
- 
-  margin-top: 15px;
-  margin-left: 60px;
-
+  margin-top: 10px;
 }
-
-
-/**
- * Footer Styles
- */
+.favorite_icon{
+  width: 40px;
+  height: 40px;
+}
 
 
 
