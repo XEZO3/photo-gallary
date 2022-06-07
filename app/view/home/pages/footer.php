@@ -1,8 +1,6 @@
-
- </div>
-        </div>
-
-<footer class="mt-auto text-center "  style="background-color:#090a0a;width:100%;margin-top:10px">
+</div>
+<script src="<?=PATH?>js/slider.js"> </script>
+<footer class="mt-auto text-center "  style="background-color:#090a0a;width:100%;">
   <!-- Grid container -->
   <div class="container pt-2">
     <!-- Section: Social media -->
@@ -31,6 +29,5 @@
   
 </footer>
 
-<script src="<?=PATH?>js/scripts.js"></script>
 </body>
 </html>

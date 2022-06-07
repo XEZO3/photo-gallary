@@ -23,7 +23,7 @@ img{
 <?php foreach($data as $row): ?>
 
   
-<div class="col-md-auto d-flex justify-content-center">
+<!-- <div class="col-md-auto d-flex justify-content-center">
         <a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration: none;color:black">
     <div class="card" style="width: 20rem;">
     <img src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" >
@@ -34,6 +34,19 @@ img{
   </div>
 </div>
     </a> 
+      </div> -->
+      <div class="col-md-auto d-flex justify-content-center">
+    <div class="card" style="width: 22rem;">
+    <a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration: none;color:black">
+    <img  src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" >
+  <div class="card-body">
+    <h5 class="card-title"><?=$row["name_$lang"]?></h5>
+   
+   
+  </div> 
+</a> 
+</div>
+   
       </div>
 <?php endforeach ?>
 <?php else: ?>

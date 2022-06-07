@@ -25,7 +25,9 @@ function getCategoryName($id,$lang){
 function categoryInfo($id){
     return  model::db()->rows("select * from category where parent_id = ?",[$id]);
 }
-
+function get_subcategory(){
+    return  model::db()->rows("SELECT * FROM `category` WHERE id NOT in (SELECT parent_id from category)");
+}
 // function check($id){
 //     $query= model::db()->rows("select * from category where parent_id = ?",[$id]);
 //     if($query)

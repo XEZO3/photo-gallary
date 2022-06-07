@@ -24,10 +24,23 @@ class homecontroller extends controller{
 
     function index(){
         $home = new home;
+        $category = new category;
+        $lang = session::get("lang");
         $title ="homepage";
-       $navbar = new navbarcontroller($title);
+        $navbar = new navbarcontroller($title);
         $news =  $home->get_news();
-        $this->view("home/pages/homepage",['title'=>"homepage",'footer'=>$this->footer,'data'=>$news]);
+        $category = $category->getcategory();
+        $last = $home->get_last_update();
+        $footer =$this->footer;
+        $data = [
+            
+            'news'=>$news,
+            "category"=>$category,
+            "lastUpdate"=>$last,
+            "about"=> $home->get_story(),
+            "post"=> new post
+        ];
+        $this->view("home/pages/homepage1",['data'=>$data,'lang'=>$lang,'footer'=>$footer]);
         
     }
     function categoryselect($id){
@@ -40,12 +53,12 @@ class homecontroller extends controller{
             $datapost = $post->getcategorypost($id[0]);
             $title = "posts"; 
             $navbar = new navbarcontroller($title);
-        $this->view("home/pages/showpost",['title'=>"homepage",'data'=>$datapost,'lang'=>$lang,'post'=>$post,'footer'=>$this->footer]);
+        $this->view("home/pages/showpost",['data'=>$datapost,'lang'=>$lang,'post'=>$post,'footer'=>$this->footer]);
        
         }else{
             $title = "categorys";
             $navbar = new navbarcontroller($title);
-        $this->view("home/pages/showcategory",['title'=>"homepage",'data'=>$datacategpry,'lang'=>$lang,'footer'=>$this->footer]);
+        $this->view("home/pages/showcategory",['data'=>$datacategpry,'lang'=>$lang,'footer'=>$this->footer]);
         
         }
     }
@@ -101,10 +114,15 @@ class homecontroller extends controller{
        header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
     }
-    function about(){
+    function ourteam(){
+        $home= new home;
         $lang = session::get("lang");
-        $title ="about";
-        $this->view("home/pages/$lang/about",['title'=>$title]);
+        $title ="our team";
+        $navbar = new navbarcontroller($title);
+        $data=[
+            'team'=>$home->get_team(),
+        ];
+        $this->view("home/pages/ourteam",['data'=>$data,'lang'=>$lang,'footer'=>$this->footer]);
     }
 
 }

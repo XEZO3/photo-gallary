@@ -3,12 +3,12 @@
 ?>
 <style>
 
-img{
+/* .img{
   height: 250px;
   width: 250px;
   background-size: cover;
   object-fit: contain;
-}
+} */
 .card{
   margin-top: 10px;
 }

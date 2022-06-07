@@ -125,7 +125,7 @@ function update($id){
             if ($error === 0) {
                 $file_ext = explode('.', $image_name);
                 $file_ext = strtolower(end($file_ext));
-                $allowed = array('jpg', 'jpeg', 'png');
+                $allowed = array('jpg', 'jpeg', 'png','jfif');
                 if (in_array($file_ext, $allowed)) {
                     $new_name = uniqid('',true). '.' . $image_name;
                     $path = "images/" . $new_name;

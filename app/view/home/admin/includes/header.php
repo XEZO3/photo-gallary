@@ -44,7 +44,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="<?=PATH?>" class="nav-link">Home</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -177,28 +177,28 @@
               </li>
               
               <li class="nav-item">
-                <a href="/photoGalary/public/admincategory/" class="nav-link">
+                <a href="<?=PATH?>admincategory/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categorys</p>
                 </a>
               </li>
               
-              <li class="nav-item menu-is-opening menu-open">
-              <a href="/photoGalary/public/admincategory/" class="nav-link">
+              <li class="nav-item">
+              <a href="<?=PATH?>admincategory/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>POST</p>
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview" style="display: block;">
+            <ul class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
-              <a href="/photoGalary/public/adminpost/" class="nav-link">
+              <a href="<?=PATH?>adminpost/" class="nav-link">
                 <i class="far fa-square nav-icon"></i>
                   <p>view posts</p>
                 </a>
               </li>
               <li class="nav-item">
-              <a href="/photoGalary/public/adminpost/insertpost" class="nav-link">
+              <a href="<?=PATH?>adminpost/insertpost" class="nav-link">
                 <i class="far fa-square nav-icon"></i>
                   <p>insert post</p>
                 </a>
@@ -208,6 +208,37 @@
              
             </ul>
           </li>
+          <li class="nav-item ">
+              <a href="<?=PATH?>admincategory/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>about</p>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="display: none;">
+              <li class="nav-item">
+              <a href="<?=PATH?>adminabout/info" class="nav-link">
+                <i class="far fa-square nav-icon"></i>
+                  <p>info</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="<?=PATH?>adminabout/team" class="nav-link">
+                <i class="far fa-square nav-icon"></i>
+                  <p>team</p>
+                </a>
+              </li>
+              
+             
+             
+            </ul>
+          </li>
+          <li class="nav-item">
+                <a href="<?=PATH?>adminnews/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>news</p>
+                </a>
+              </li>
           <li class="nav-item">
                 <a href="<?=PATH?>admin/users" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

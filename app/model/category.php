@@ -5,7 +5,7 @@ use MVC\core\model;
 class category extends model{
 
 function getcategory(){
-    return  model::db()->rows("select * from category");
+    return  model::db()->rows("select * from category where parent_id=?",[0]);
 
 }
 

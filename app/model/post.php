@@ -10,7 +10,7 @@ class post extends model{
         return  model::db()->row("select * from posts where id = ?",[$id]);
     }
     function getmainimage($id){
-       $query =  model::db()->row("select * from images where post_id = ?",[$id]);
+       $query =  model::db()->row("select * from images where post_id = ? order by id",[$id]);
        return $query['image'];
     }
     function getpostimages($id){
