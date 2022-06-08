@@ -16,9 +16,20 @@ img{
 }
 
 </style>
+<div style="margin-left: 30px;">
+<a style="font-size: 25px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>">home</a>>
+<?php 
+foreach($prev as $p):
+?>
+<a style="font-size: 25px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>home/categoryselect/<?=$p['id']?>"><?=$p["name_$lang"]?></a>>
 
+<?php 
+endforeach
+?>
+</div>
 <div class="container" dir="<?=($lang == "ar") ?"rtl" : "ltr"?>">
 <div class="row justify-content-center" >
+
   <?php if(!empty($data)): ?>
 <?php foreach($data as $row): ?>
 

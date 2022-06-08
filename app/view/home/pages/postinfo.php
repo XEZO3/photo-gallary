@@ -13,7 +13,7 @@
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
   <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <?php for($i=1;$i<=count($images);$i++): ?>
+      <?php for($i=1;$i<count($images);$i++): ?>
     <button type="button" data-bs-target="#demo" data-bs-slide-to="<?=$i?>"></button>
     <?php endfor ?>
   </div>

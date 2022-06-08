@@ -8,6 +8,12 @@ function getcategory(){
     return  model::db()->rows("select * from category where parent_id=?",[0]);
 
 }
+function get_category_parent($id){
+    return  model::db()->row("select * from category where id=?",[@$id]);
+}
+// function get_post_parent($id){
+//     return  model::db()->row("select * from category where id=?",[@$id]);
+// }
 
 function getCategoryName($id){
     $query=  model::db()->row("select * from category where id = ?",[$id]);
