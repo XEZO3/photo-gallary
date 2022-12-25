@@ -23,6 +23,7 @@
   
     <?php 
     $active = true;
+   
     foreach($images as $row):
     ?>
        

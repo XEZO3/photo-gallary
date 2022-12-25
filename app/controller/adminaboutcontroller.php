@@ -8,7 +8,7 @@ use MVC\model\admininfo;
 class adminaboutcontroller extends controller{
     function __construct()
 {
-    $session = new session;
+    //$session = new session;
     if(session::get("lang")==null){
         session::set("lang","en");
     }
@@ -49,8 +49,8 @@ class adminaboutcontroller extends controller{
         $dest = "images/" . $new_name;
         $info = new admininfo;
         $data = [
-            "name"=>htmlspecialchars($_POST['story_ar']),
-            "exp"=>htmlspecialchars($_POST['story_en']),
+            "name"=>htmlspecialchars($_POST['name']),
+            "exp"=>htmlspecialchars($_POST['exp']),
             "image"=>htmlspecialchars($new_name),
             
         ];

@@ -8,13 +8,13 @@ use MVC\model\post;
 use MVC\core\cookies;
 use MVC\model\footer;
 use MVC\model\home;
-
+use MVC\controller\postscontroller;
 class homecontroller extends controller{
     public $footer;
     function __construct()
     {
        
-        $session = new session;
+        //$session = new session;
         if(session::get("lang")==null){
             session::set("lang","en");
         }
@@ -38,46 +38,14 @@ class homecontroller extends controller{
             "category"=>$category,
             "lastUpdate"=>$last,
             "about"=> $home->get_story(),
-            "post"=> new post
+            "post"=> new post,
+            'search'=> @new postscontroller
         ];
         $this->view("home/pages/homepage",['data'=>$data,'lang'=>$lang,'footer'=>$footer]);
         
     }
-    function categoryselect($id){
-        $lang = session::get("lang");
-        
-        $category = new category;
-        
-        $post = new post;
-        $datacategpry = $category->categoryInfo($id[0]);
-        $prev_page = $this->test($id[0]);
-        if(empty($datacategpry)){
-            $datapost = $post->getcategorypost($id[0]);
-            //$prev_page = $this->test($id); 
-            $title = "posts"; 
-            $navbar = new navbarcontroller($title);
-        $this->view("home/pages/showpost",['data'=>$datapost,'lang'=>$lang,'post'=>$post,'footer'=>$this->footer,"prev"=>$prev_page]);
-       
-        }else{
-            $title = "categorys";
-            //$prev_page = [$this->test($id)];
-            $navbar = new navbarcontroller($title);
-        $this->view("home/pages/showcategory",['data'=>$datacategpry,'lang'=>$lang,'footer'=>$this->footer,"prev"=>$prev_page]);
-        
-        }
-    }
-    function postinfo($id){
-        $lang = session::get("lang");
-         $title = "post info";
-        $navbar = new navbarcontroller($title);
-        @$post = new post;
-       
-        @$postinfo = $post->getpost($id[0]);
-        @$main_image = $post->getmainimage($id[0]);
-        @$images = $post->getpostimages($postinfo['id']);
-        $this->view("home/pages/postinfo",['postinfo'=>$postinfo,'images'=>$images,'lang'=>$lang,'main'=>$main_image,'footer'=>$this->footer]);
-        
-    }
+    
+    
     function add_favorite($id){
        echo @$id[0];
        $id = @$id[0];
@@ -128,21 +96,7 @@ class homecontroller extends controller{
         ];
         $this->view("home/pages/ourteam",['data'=>$data,'lang'=>$lang,'footer'=>$this->footer]);
     }
-    function test($ids){
-        $category = new category;
-       $id =$ids;
-       $parents =[];
-        while($id!=0){
-             $prev = $category->get_category_parent($id);
-             $id = $prev["parent_id"];
-            $parents[]=$prev;
-        }
-
-       
-        
-        return array_reverse($parents);
-
-    }
+    
 
 }
 

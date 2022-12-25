@@ -10,7 +10,7 @@ use MVC\model\users;
 class usercontroller extends controller{
     function __construct()
     {
-        $session = new session;
+       // $session = new session;
     }
     function index(){
         $footer = new footer;

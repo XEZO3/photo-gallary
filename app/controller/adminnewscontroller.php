@@ -8,7 +8,7 @@ use MVC\model\adminnews;
 class adminnewscontroller extends controller {
     function __construct()
     {
-        $session = new session;
+        //$session = new session;
     if(session::get("lang")==null){
         session::set("lang","en");
     }

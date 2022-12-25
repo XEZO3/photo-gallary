@@ -32,7 +32,7 @@
   <a class="btn" id="menu-btns" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="background-color: blue;">
             <div class="p-2 bd-highlight" style="margin-top: 5px" > 
                <!-- <button class="btn btn-primary" id="sidebarToggle"><i class="fa-solid fa-bars fa-lg"></i></button> -->
-             <img src="<?=PATH?>icons/bar.png" style="height:30px;width:33px;background-size:100% 100%;margin:0">
+             <img src="<?=PATH?>icons/bar.webp" style="height:25px;width:25px;background-size:100% 100%;margin:0">
             <span style="color:white;font-weight:bold"> Menu</span>
             </div>
            </a>
@@ -42,18 +42,18 @@
     
     
     <div class="p-2 bd-highlight ms-auto">
-                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="height:35px;width:35px" src="<?=PATH?>icons/world.png"></a>
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img style="height:30px;width:30px" src="<?=PATH?>icons/world.webp"></a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/ar"?>">العربية</a> 
-                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/en"?>">english</a> 
-                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/fr"?>">france</a> 
-                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/ru"?>">russian</a> 
-                                    <a class="dropdown-item" href="<?=PATH."/home/setlanguage/tr"?>">turkey</a> 
+                                    <a class="dropdown-item" href="<?=PATH."home/setlanguage/ar"?>">العربية</a> 
+                                    <a class="dropdown-item" href="<?=PATH."home/setlanguage/en"?>">english</a> 
+                                    <a class="dropdown-item" href="<?=PATH."home/setlanguage/fr"?>">france</a> 
+                                    <a class="dropdown-item" href="<?=PATH."home/setlanguage/ru"?>">russian</a> 
+                                    <a class="dropdown-item" href="<?=PATH."home/setlanguage/tr"?>">turkey</a> 
                                 </div>
                       </div>
                       <div class="p-2 bd-highlight">
                         <a class="nav-link" href="<?=PATH?>home/showfav">
-                      <img style="height:35px;width:35px" src="<?=PATH?>icons/bookmark.png">
+                      <img style="height:30px;width:30px" src="<?=PATH?>icons/bookmark.webp">
                         </a>
                       </div>
    
@@ -70,14 +70,14 @@
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
         <?php foreach($category as $row): ?>
           <li class="nav-item">
-            <a class="nav-link"href="<?=PATH?>home/categoryselect/<?=$row['id']?>">
-            <span style="color:white;font-size:30px" class="mx-2"><?=$row["name_$lang"]?></span>
+            <a class="nav-link"href="<?=PATH?>category/categoryselect/<?=$row['id']?>">
+            <span style="color:white;font-size:25px" class="mx-2"><?=$row["name_$lang"]?></span>
           </a>
           </li>
           <?php endforeach ?>
           <li class="nav-item">
             <a class="nav-link"href="<?=PATH?>home/ourteam">
-            <span style="color:white;font-size:30px" class="mx-2">Our Team</span>
+            <span style="color:white;font-size:25px" class="mx-2">Our Team</span>
           </a>
           </li>
         </ul>

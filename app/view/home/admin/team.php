@@ -139,8 +139,9 @@ include("includes/header.php");
   </div>
 
   <!--end modal -->
-  <?php endforeach ?>
+  
   </div>
+  <?php endforeach ?>
      </div>
      
 </div>

@@ -11,7 +11,7 @@ use MVC\core\model;
 class adminpostcontroller extends controller{
 function __construct()
 {
-    $session = new session;
+    //$session = new session;
     if(session::get("lang")==null){
         session::set("lang","en");
     }
@@ -23,21 +23,22 @@ function __construct()
 
 function index($id){
     $post = new adminpost;
-    $lang = session::get("lang");
-    $categoryData = $post->getCategory();
+    $lang = session::get("lang"); 
     $category = new admincategory;
+    $categoryData = $category->get_sub_Category();
+   
     $postdata = (@$id[0] == null || !isset($id[0]))?$post->getposts():$post->getpostsByCategory($id[0]);
     $this->view("home/admin/posts",['data'=>$categoryData,'postdata'=>$postdata,'lang'=>$lang,'category'=>$category]);
 }
 function insertpost(){
-    $post = new adminpost;
     
-    $categoryData = $post->getCategory();
+    $category = new admincategory; 
+    $categoryData = $category->get_sub_Category();
     $lang = session::get("lang");
     $this->view("home/admin/postinsert",['data'=>$categoryData,'lang'=>$lang]);
 }
 function insert(){
-    $model = new model;
+    
     $post = new adminpost;
     $images = $_FILES['images'];
     $num_of_imgs = count($images['name']);
@@ -87,15 +88,26 @@ function insert(){
 }
 function updatepage($id){
     $post = new adminpost;
+    $category = new admincategory;
     $lang = session::get("lang");
     if(empty($id[0])){
         header("location:".PATH."adminpost");
         exit;
     }
-    @$categoryData = $post->getCategory();
+    @$categoryData = $category->get_sub_Category();
+    @$path =$category->get_category_parent($id[0]);
+    @$name =$post->get_post_title($id[0]);
     @$postData =$post->getpostsByid($id[0]);
     @$images = $post->getPostImages($id[0]);
-    $this->view("home/admin/postupdate",['postData'=>$postData,'categorydata'=>$categoryData,'lang'=>$lang,'images'=>$images,'id'=>$id[0]]);
+    $data =[
+        'postData'=>$postData ,
+        'parent_category'=> $path,
+        'name'=>$name,
+        'categorydata'=>$categoryData ,
+        'images'=>$images ,
+        'id'=>$id[0] ,
+    ];
+    $this->view("home/admin/postupdate",['lang'=>$lang,'data'=>$data]);
 }
 function update($id){
     $post = new adminpost;

@@ -13,20 +13,21 @@
   margin-top: 10px;
 }
 .favorite_icon{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 
 
 
 </style>
-<div style="margin-left: 30px;">
-<a style="font-size: 25px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>">home</a>>
+<div style="margin-left: 30px;margin-right:30px" dir="<?=($lang == "ar") ?"rtl" : "ltr"?>">
+<a style="font-size: 20px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>"><?=HomePage[$lang]?></a>
 <?php 
 foreach($prev as $p):
 ?>
-<a style="font-size: 25px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>home/categoryselect/<?=$p['id']?>"><?=$p["name_$lang"]?></a>>
+->
+<a style="font-size: 20px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>home/categoryselect/<?=$p['id']?>"><?=$p["name_$lang"]?></a>
 
 <?php 
 endforeach
@@ -39,13 +40,13 @@ endforeach
       ?>
         
    <div class="col-md-auto d-flex justify-content-center">
-        <a href="<?=PATH?>home/postinfo/<?=$row['id'] ?>" style="text-decoration: none;color:black">
-    <div class="card" style="width: 22rem;">
+        <a href="<?=PATH?>posts/postinfo/<?=$row['id'] ?>" style="text-decoration: none;color:black">
+    <div class="card" style="width: 20rem;">
     <img  src="<?=PATH?>images/<?=$post->getmainimage($row['id'])?>" class="card-img-top" >
   <div class="card-body">
     <h5 class="card-title"><?=$row["title_$lang"]?></h5>
    
-    <a href="<?=PATH?>home/add_favorite/<?=$row['id']?>" class="aa"><img class="favorite_icon" src="<?=PATH?>icons/bookmark.png"></a>
+    <a href="<?=PATH?>home/add_favorite/<?=$row['id']?>" class="aa"><img class="favorite_icon" src="<?=PATH?>icons/bookmark.webp"></a>
   </div>
 </div>
     </a> 

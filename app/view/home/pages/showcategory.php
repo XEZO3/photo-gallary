@@ -5,9 +5,9 @@
 <style>
 
 
-img{
+.img{
   height: 250px;
-  width: 250px;
+ 
   background-size: cover;
   object-fit: contain;
 }
@@ -16,12 +16,14 @@ img{
 }
 
 </style>
-<div style="margin-left: 30px;">
-<a style="font-size: 25px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>">home</a>>
+<div style="margin-left: 30px;margin-right:30px" dir="<?=($lang == "ar") ?"rtl" : "ltr"?>">
+<a style="font-size: 20px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>"><?=HomePage[$lang]?></a>
 <?php 
+
 foreach($prev as $p):
 ?>
-<a style="font-size: 25px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>home/categoryselect/<?=$p['id']?>"><?=$p["name_$lang"]?></a>>
+>
+<a style="font-size: 20px;margin-left: 2px;text-decoration:none;color:black" href="<?=PATH?>home/categoryselect/<?=$p['id']?>"><?=$p["name_$lang"]?></a>
 
 <?php 
 endforeach
@@ -47,9 +49,9 @@ endforeach
     </a> 
       </div> -->
       <div class="col-md-auto d-flex justify-content-center">
-    <div class="card" style="width: 22rem;">
-    <a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration: none;color:black">
-    <img  src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" >
+    <div class="card" style="width: 20rem;">
+    <a href="<?=PATH?>category/categoryselect/<?=$row['id']?>" style="text-decoration: none;color:black">
+    <img  src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top img" >
   <div class="card-body">
     <h5 class="card-title"><?=$row["name_$lang"]?></h5>
    

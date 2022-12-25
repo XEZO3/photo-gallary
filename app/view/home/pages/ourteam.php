@@ -9,9 +9,9 @@
   <div class="row justify-content-center">
       <?php foreach($data['team'] as $row):?>
     <!-- Team Member 1 -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-4 col-md-5 mb-4">
       <div class="card border-0 shadow">
-        <img src="<?=PATH?>images/<?=$row['image']?>" class="card-img-top" alt="...">
+        <img src="<?=PATH?>images/<?=$row['image']?>" class="card-img-top" style="height:370px" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title mb-0"><?=$row['name']?></h5>
           <div class="card-text text-black-50"><?=$row['exp']?></div>

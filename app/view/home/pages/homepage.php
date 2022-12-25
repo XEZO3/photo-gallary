@@ -8,7 +8,7 @@
  }
   .carousel-inner,.carousel-item{
     max-height: 500px;
-    background-size: cover;
+    background-size:cover;
     width: 100%;
   }
   .on-slid{
@@ -26,7 +26,7 @@
    
     border-radius:10px;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
   }
   .cards{
     width: 18rem;
@@ -88,7 +88,7 @@
         <div class="d-flex flex-column text-center" style="margin-top: 20%">
       <p style="color:white;font-size:18px" class="p-2 bd-highlight"><?=$row["title_$lang"];?></p>
       
-      <div class=" p-2 bd-highlight"><a href="<?=PATH;?>home/categoryselect/<?=$row['category_id'];?>" style="color:white;background-color:red" class="btn">Shop Now</a></div>
+      <div class=" p-2 bd-highlight"><a href="<?=PATH;?>category/categoryselect/<?=$row['category_id'];?>" style="color:white;background-color:red" class="btn">Shop Now</a></div>
       </div>
       </div>
        
@@ -117,9 +117,9 @@
 <div class="row justify-content-center">
 <?php foreach($data['category'] as $row): ?>
 <div class="col-md-auto d-flex justify-content-center">
-  <div class="card " style="border: none;width: 22rem;">
-  <a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration:none;color:black">
-    <img src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" style="height:250px">
+  <div class="card " style="border: none;width: 20rem;">
+  <a href="<?=PATH?>category/categoryselect/<?=$row['id']?>" style="text-decoration:none;color:black">
+    <img src="<?=PATH?>images/<?=$row['icon']?>" class="card-img-top" style="height:200px">
     
     <div class="card-title text-center">
       <h3><?=$row["name_$lang"]?></h3>
@@ -135,13 +135,13 @@
 <div class="row justify-content-center" >
 <?php foreach($data['lastUpdate'] as $row): ?>
 <div class="col-md-auto d-flex justify-content-center">
-<div class="card" style="width: 22rem;">
-<a href="<?=PATH?>home/categoryselect/<?=$row['id']?>" style="text-decoration:none;color:black">
-    <img  src="<?=PATH?>images/<?=$data['post']->getmainimage($row['id'])?>" class="card-img-top"  style="height:250px" >
+<div class="card" style="width: 20rem;">
+<a href="<?=PATH?>posts/postinfo/<?=$row['id']?>" style="text-decoration:none;color:black">
+    <img  src="<?=PATH?>images/<?=$data['post']->getmainimage($row['id'])?>" class="card-img-top"  style="height:200px" >
   <div class="card-body">
     <h5 class="card-title"><?=$row["title_$lang"]?></h5>
    
-    <a  href="<?=PATH?>home/add_favorite/<?=$row['id']?>" class="me-auto"><img class="favorite_icon" src="<?=PATH?>icons/bookmark.png"></a>
+    <a  href="<?=PATH?>home/add_favorite/<?=$row['id']?>" class="me-auto"><img class="favorite_icon" src="<?=PATH?>icons/bookmark.webp"></a>
   </div>
 </a>
 </div>
@@ -154,7 +154,13 @@
 <div class="row justify-content-center" >
 
 <p  class="text-center" style="font-size: 25px;"><?=@$data["about"]["story_$lang"]?></p>
+<?php 
+// foreach($data['search']->search_post() as $row){
+// echo $row["title_$lang"];
 
+// }
+
+?>
 </div>
 </div>
 

@@ -3,10 +3,10 @@ namespace MVC\model;
 use MVC\core\model;
 
 class post extends model{
-    function getcategorypost($id){
+    function GetPostByCategory($id){
         return  model::db()->rows("select * from posts where category_id = ?",[$id]);
     }
-    function getpost($id){
+    function getPostInfo($id){
         return  model::db()->row("select * from posts where id = ?",[$id]);
     }
     function getmainimage($id){
@@ -18,5 +18,8 @@ class post extends model{
     }
     function getAllPosts(){
         return  model::db()->rows("select * from posts  ",[]);
+    }
+    function search_posts($lang,$value){
+        return model::db()->rows("select * from posts where title_$lang  like :keyword",['keyword'=>"%".$value."%"]);
     }
 }

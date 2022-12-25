@@ -4,10 +4,11 @@ namespace MVC\controller;
 use MVC\core\controller;
 use MVC\core\session;
 use MVC\model\admincategory;
+use MVC\model\category;
 class admincategorycontroller extends controller{
     function __construct()
     {
-        $session =  new session;
+        //$session =  new session;
         if(session::get("lang")==null){
             session::set("lang","en");
         }
@@ -114,9 +115,27 @@ class admincategorycontroller extends controller{
     }
     function categoryInfo($id){
         $category = new admincategory;
+        $path = $this->category_path($id[0]);
         $lang = session::get("lang");
         $info = $category->categoryInfo($id[0]);
-        $this->view("home/admin/categoryinfo",['info'=>$info,'id'=>$id[0],'name'=>$category->getCategoryName($id[0],$lang)]);
+        $this->view("home/admin/categoryinfo",['info'=>$info,'lang'=>$lang,'prev'=>$path,'id'=>$id[0],'name'=>$category->getCategoryName($id[0],$lang)]);
     }
+    function category_path($ids){
+        $category = new admincategory;
+        
+       $id =$ids;
+       $parents =[];
+        while($id!=0){
+             $prev = $category->get_categoryParents($id);
+             $id = $prev["parent_id"];
+            $parents[]=$prev;
+        }
+
+       
+        
+        return array_reverse($parents);
+
+    }
+  
 }
 ?>

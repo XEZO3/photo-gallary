@@ -3,9 +3,7 @@ namespace MVC\model;
 use MVC\core\model;
 use MVC\core\session;
 class adminpost extends model {
-function getCategory(){
-    return  model::db()->rows("SELECT * FROM `category` WHERE id NOT in (SELECT parent_id from category)");
-}
+
 function getposts(){
     return  model::db()->rows("select * from posts");
 }
@@ -45,6 +43,9 @@ function lastid(){
 function image_by_id($id){
      $query = model::db()->row("select * from images where id = ?",[$id]);
      return $query['image'];
+}
+function get_post_title($id){
+    return  model::db()->row("select * from posts where id = ?",[$id]);
 }
 }
 

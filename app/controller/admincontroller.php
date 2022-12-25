@@ -9,7 +9,7 @@ use MVC\model\users;
 class admincontroller extends controller{
     function __construct()
     {
-        $session =  new session;
+        //$session =  new session;
         if(session::get("lang")==null){
             session::set("lang","en");
         }

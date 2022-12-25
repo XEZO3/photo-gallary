@@ -28,6 +28,15 @@ function categoryInfo($id){
 function get_subcategory(){
     return  model::db()->rows("SELECT * FROM `category` WHERE id NOT in (SELECT parent_id from category)");
 }
+function get_category_parent($id){
+    return  model::db()->row("select * from category where id=(select posts.category_id from posts where posts.id = ? )",[@$id]);
+}
+function get_sub_Category(){
+    return  model::db()->rows("SELECT * FROM `category` WHERE id NOT in (SELECT parent_id from category)");
+}
+function get_categoryParents($id){
+    return  model::db()->row("select * from category where id=?",[$id]);
+}
 // function check($id){
 //     $query= model::db()->rows("select * from category where parent_id = ?",[$id]);
 //     if($query)

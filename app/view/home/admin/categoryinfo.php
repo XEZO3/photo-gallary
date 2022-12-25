@@ -14,8 +14,11 @@ include("includes/header.php");
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item"><a href="<?=PATH?>admin">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?=PATH?>admincategory">categorys</a></li>
+              <?php foreach($prev as $p): ?>
+                <li class="breadcrumb-item"><a href="<?=PATH?>admincategory/categoryinfo/<?=$p['id']?>"><?=$p["name_$lang"]?></a></li>
+              <?php endforeach ?>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -40,7 +43,7 @@ include("includes/header.php");
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" enctype="multipart/form-data" action="/photogalary/public/admincategory/insert/">
+        <form method="post" enctype="multipart/form-data" action="<?=PATH?>admincategory/insert/">
         <div class="mb-3">
     <label  class="form-label">ar_name</label>
     <input type="text" required name="name_ar" value="" class="form-control" >
@@ -86,12 +89,12 @@ include("includes/header.php");
 <div class="card" style="width: 50rem;">
   <div class="card-header" style="float: left;">
   
-  <a href="/photoGalary/public/admincategory/categoryinfo/<?=$row['id']?>" class="btn btn-primary" style="width:5rem;float:right;background-color:gray;margin-left:5px">more</a>
+  <a href="<?=PATH?>admincategory/categoryinfo/<?=$row['id']?>" class="btn btn-primary" style="width:5rem;float:right;background-color:gray;margin-left:5px">more</a>
 
   <button type="button" class="btn btn-primary" data-toggle="modal" style="width:5rem;float:right;margin-left:5px" data-target="#o<?=$row['id']?>">
  update
 </button>
-   <a href="/photoGalary/public/admincategory/delete/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
+   <a href="<?=PATH?>admincategory/delete/<?=$row['id']?>" class="btn btn-primary" style="width:3rem;float:right;background-color:red;margin-left:5px">X</a>
    <h4> category card </h4>
    
   <?php  ?>
